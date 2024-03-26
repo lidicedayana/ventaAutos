@@ -1,0 +1,9 @@
+.imagen_autos{
+    width: 80px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.pagination{
+    cursor: pointer;
+}
