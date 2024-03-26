@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+<div class="card">
+  <div class="card-header">
+    Detalle del Auto: {{vehiculo?.codigo}}: {{vehiculo?.marca}} {{vehiculo?.modelo}}
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col propiedades">
+        <div class="row">
+          <label for="staticCodigo" class="col fw-bold">Marca: </label>
+          <div class="col">
+            {{vehiculo?.marca}}
+          </div>
+        </div>
+        <div class="row">
+          <label for="staticCodigo" class="col fw-bold">Modelo: </label>
+          <div class="col">
+            {{vehiculo?.modelo}}
+          </div>
+        </div>
+        <div class="row">
+          <label for="staticCodigo" class="col fw-bold">Año: </label>
+          <div class="col">
+            {{vehiculo?.anio}}
+          </div>
+        </div>
+        <div class="row">
+          <label for="staticCodigo" class="col fw-bold">Color: </label>
+          <div class="col">
+            {{vehiculo?.color}}
+          </div>
+        </div>
+        <div class="row">
+          <label for="staticCodigo" class="col fw-bold">Kilometraje: </label>
+          <div class="col">
+            {{vehiculo?.kilometraje}}
+          </div>
+        </div>
+        <div class="row">
+          <label for="staticCodigo" class="col fw-bold">Precio: </label>
+          <div class="col">
+            {{vehiculo?.precio | currency}}
+          </div>
+        </div>
+        <div class="row">
+          <label for="staticCodigo" class="col fw-bold">Calificacion: </label>
+          <div class="col">
+            <app-calificacion [calificacion]="vehiculo?.calificacion" (accionClick)="imprimir($event)"></app-calificacion>
+          </div>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          
+          <button type="button" class="btn btn-outline-primary"><i class="bi bi-cart-fill"></i> Comprar</button>
+        </div>
+      </div>
+      <div class="col" id="img_vehi">
+        <img class="vehiculo_car" src="{{vehiculo?.foto}}" alt="vehiculo">
+      </div>
+    </div>
+  </div>
+</div>

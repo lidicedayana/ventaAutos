@@ -1,0 +1,27 @@
+
+.card{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.propiedades{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#img_vehi{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+}
+.vehiculo_car{
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    padding: 40px;
+}
+.btn-outline-primary{
+    width: 160px;
+}
