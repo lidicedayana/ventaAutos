@@ -1,0 +1,62 @@
+<div class="card">
+  <div class="card-header">
+    Registro del Cliente
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <form [formGroup]="formulario">
+
+        <div class="mb-3">
+          <label for="codigo" class="form-label">Código<span class="text-danger" *ngIf="formulario.controls['codigo'].errors?.['required']">
+            *</span></label>
+          <input type="text" class="form-control" formControlName="codigo">
+          
+        </div>
+
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre<span class="text-danger" *ngIf="formulario.controls['nombre'].errors?.['required']">
+            *</span></label>
+          <input type="text" class="form-control" formControlName="nombre">
+        </div>
+
+        <div class="mb-3">
+          <label for="apellido" class="form-label">Apellido<span class="text-danger" *ngIf="formulario.controls['apellido'].errors?.['required']">
+            *</span></label>
+          <input type="text" class="form-control" formControlName="apellido">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password<span class="text-danger" *ngIf="formulario.controls['password'].errors?.['required']">
+            *</span></label>
+          <input type="password" class="form-control" formControlName="password">
+        </div>
+
+        <div class="mb-3">
+          <input type="checkbox" class="form-check-input" id="proporcionarDatos" formControlName="quiereContacto">
+          <label for="proporcionarDatos" class="form-check-label"> ¿Desea contacto?</label>
+        </div>
+
+        <div class="mb-3" *ngIf="formulario.get('quiereContacto')?.value">
+          <label for="correo" class="form-label">Dirección de correo</label>
+          <input type="email" class="form-control" formControlName="email" id="correo"
+            aria-describedby="correoHelp">
+          <div id="correoHelp" class="form-text">Nunca compartiremos su correo con nadie.</div>
+        </div>
+
+        <div class="mb-3" *ngIf="formulario.get('quiereContacto')?.value">
+          <label for="telefono" class="form-label">Teléfono</label>
+          <input type="number" class="form-control" formControlName="telefono" id="telefono"
+            aria-describedby="telefonoHelp">
+          <div id="telefonoHelp" class="form-text">Tu telefono está seguro con nosotros</div>
+        </div>
+        <div class="d-md-block">
+          <button class="btn btn-primary me-md-2" type="button" (click)="registrar()">Registrar Cliente</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-outline-secondary d-grid gap-2 col-6 mx-auto" style="width: 110px;" (click)="goInicio()">
+      Inicio
+    </button>
+  </div>
+</div>
