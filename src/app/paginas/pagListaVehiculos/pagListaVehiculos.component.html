@@ -20,13 +20,12 @@
         <a [routerLink]="['/vehiculo']" class="btn btn-info ">Nuevo vehiculo</a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12">
+    <div class="row table-responsive container-md">
+      <div class="container text-center ">
         <table class="table table-striped">
           <thead>
             <tr>
-              
-              <td>
+              <td class="col-6 d-grid gap-2 d-md-flex justify-content-md-start">
                 <div class="row">
                   <div class="col">
                     <select class="form-control" [(ngModel)]="rows" (change)="consultarVehiculos()">>
@@ -39,12 +38,9 @@
                 </div>
               
               </td>
-              <td colspan="8">
-
-              </td>
             </tr>
             <tr>
-              <th>
+              <th scope="col">
                 <button class="btn " [ngClass]="{'btn-primary': !mostrarImagen, 'btn-secondary': mostrarImagen}"
                   (click)="mostrar()" [innerText]="mostrarImagen ?'Ocultar Imagen':  'Mostrar Imagen'"></button>
               </th>
@@ -62,7 +58,7 @@
 
           <tbody class="tablecontainer">
             <tr class="listable" *ngFor="let item of listaVehiculos">
-              <td> <img class="imagen_autos" [src]="item.foto" alt="vehiculo" *ngIf="mostrarImagen"></td>
+              <td scole="row"> <img class="imagen_autos" [src]="item.foto" alt="vehiculo" *ngIf="mostrarImagen"></td>
               <!-- <td>
                 <a [routerLink]="['/vehiculos/'+item.codigo]">{{item.codigo}}</a>
               </td> -->
@@ -86,7 +82,7 @@
             </tr>
 
           </tbody>
-          <tfoot>
+          <tfoot aria-label="...">
             <tr>
               <td>
                 <nav aria-label="Page navigation example">

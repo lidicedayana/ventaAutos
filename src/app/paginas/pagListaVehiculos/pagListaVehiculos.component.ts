@@ -104,12 +104,23 @@ export class PagListaVehiculosComponent implements OnInit {
 
   }
   listaPaginas: Array<number>=[];
-  paginar(pages: number) {
+  paginar(totalPaginas: number) {
     this.listaPaginas = [];
-    for (let i = 1; i <= pages; i++) {
-      this.listaPaginas.push(i);
+
+    const rango = 1; // Mostrar dos páginas antes y dos después de la página actual
+    let inicio = Math.max(1, this.page - rango);
+    let fin = Math.min(totalPaginas, this.page + rango);
+
+    // Ajustar el rango si está demasiado cerca del inicio o del final
+    if (this.page <= rango) {
+      fin = Math.min(2 * rango + 1, totalPaginas);
+    } else if (totalPaginas - this.page < rango) {
+      inicio = Math.max(totalPaginas - 2 * rango, 1);
     }
 
+    for (let i = inicio; i <= fin; i++) {
+      this.listaPaginas.push(i);
+    }
   }
 
 
