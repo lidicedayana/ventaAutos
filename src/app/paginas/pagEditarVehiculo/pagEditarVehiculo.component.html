@@ -1,0 +1,93 @@
+<div class="card">
+  <div class="card-header">
+    EDITAR VEHICULO
+  </div>
+  <div class="card-body">
+
+
+    <div class="row">
+      <div class="col-12">
+
+        <form [formGroup]="formulario">
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label"><span class="text-danger" *ngIf="formulario.controls['codigo'].errors?.['required']">*</span>Codigo:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="codigo">
+          
+            </div>
+          </div>
+
+          <!-- <div class="mb-3 row">
+            <label for="staticCodigo" class="col-sm-2 col-form-label">Confirmar codigo:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="staticCodigo" name="marca" formControlName="codigo_confirms">
+              <span class="text-danger" *ngIf="formulario.errors?.['codigoComparativo']">Solo acepta digitos</span>
+
+            </div>
+          </div> -->
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label"><span class="text-danger" *ngIf="formulario.controls['marca'].errors?.['required']">*</span>Marca:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="marca">
+      
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label"><span class="text-danger" *ngIf="formulario.controls['modelo'].errors?.['required']">*</span>Modelo:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="modelo">
+             
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label"><span class="text-danger" *ngIf="formulario.controls['color'].errors?.['required']">*</span>Color:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="color">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label"><span class="text-danger" *ngIf="formulario.controls['anio'].errors?.['required']">*</span>Año:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="anio">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label"><span class="text-danger" *ngIf="formulario.controls['kilometraje'].errors?.['required']">*</span>Kilometraje:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="kilometraje">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Precio:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" formControlName="precio">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label"><span class="text-danger" *ngIf="formulario.controls['calificacion'].errors?.['required']">*</span>Calificación:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" formControlName="calificacion">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Enlace de foto:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="foto">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn btn-info" (click)="guardar()">GUARDAR</button>
+    </div>
+  </div>
+</div>
