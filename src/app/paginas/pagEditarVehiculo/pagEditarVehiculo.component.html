@@ -86,8 +86,14 @@
         </form>
       </div>
     </div>
-    <div class="row">
-      <button class="btn btn-info" (click)="guardar()">GUARDAR</button>
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <button class="btn btn-info me-5" (click)="guardar()">GUARDAR</button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-secondary" [routerLink]="['/vehiculos/']">ATRAS</button>
+      </div>
     </div>
+    
   </div>
 </div>

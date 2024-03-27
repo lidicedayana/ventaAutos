@@ -1,0 +1,86 @@
+<div class="card">
+  <div class="card-header">
+    LISTA DE CLIENTES
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Filtro</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Marca" [(ngModel)]="filtro" (blur)="consultarClientes()">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        filtrado por: {{filtro}}
+      </div>
+    </div>
+   
+    <div class="row table-responsive container-md">
+      <div class="container text-center ">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <td class="col-6 d-grid gap-2 d-md-flex justify-content-md-start">
+                <div class="row">
+                  <div class="col">
+                    <select class="form-control" [(ngModel)]="rows" (change)="consultarClientes()">>
+                      <option value="5">5</option>
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                      <option value="100">100</option>
+                    </select>
+                  </div>
+                </div>
+              
+              </td>
+            </tr>
+            <tr>
+              <!-- <th scope="col">Codigo</th> -->
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Contraseña</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">OP</th>
+            </tr>
+          </thead>
+
+          <tbody class="tablecontainer">
+            <tr class="listable" *ngFor="let item of listaClientes">
+              <td>{{item.nombre | uppercase}}</td>
+              <td>{{item.apellido | AEspacio:"-" | uppercase}}</td>
+              <td>{{item.password}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.telefono}}</td>
+             
+              <td>
+                <div class="btn-group me-2" role="group" aria-label="First group">
+                  <button type="button" class="btn btn-primary" [routerLink]="['/cliente/'+item.id]" ><i class="bi bi-pencil-square"></i></button>
+                  <button type="button" class="btn btn-dark" (click)="eliminar(item.id)"><i class="bi bi-trash"></i></button>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+          <tfoot aria-label="...">
+            <tr>
+              <td>
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item"><a class="page-link " (click)="atras()">Atrás</a></li>
+
+                    <li class="page-item" *ngFor="let pagina of listaPaginas" [ngClass]="{'active': page == pagina}">
+                      <a class="page-link" (click)="cambiarPagina(pagina)">{{pagina}}</a>
+                    </li>
+
+                    <li class="page-item"><a class="page-link" (click)="siguiente()">Siguiente</a></li>
+                  </ul>
+                </nav>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+    </div>
+  </div>
+</div>

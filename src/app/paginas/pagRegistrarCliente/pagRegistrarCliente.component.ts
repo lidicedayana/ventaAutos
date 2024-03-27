@@ -16,7 +16,7 @@ export class PagRegistrarClienteComponent implements OnInit {
     private formBuilder: FormBuilder,
     private vehiculoService: VehiculoService) {
       this.formulario= this.formBuilder.group({
-        "codigo": ['', [Validators.required]],
+        "id": ['', [Validators.required]],
         "nombre": ['', [Validators.required]],
         "apellido": ['', [Validators.required]],
         "password": ['', [Validators.required]],
@@ -24,7 +24,7 @@ export class PagRegistrarClienteComponent implements OnInit {
         "telefono": [''],
         "quiereContacto": [false]
        
-      })
+      });
      }
 
   ngOnInit(): void {
@@ -65,6 +65,10 @@ export class PagRegistrarClienteComponent implements OnInit {
     });
 
    }
+  }
+
+  consultar(){
+    this._router.navigate(['/ConsultaClientes']);
   }
 
 }

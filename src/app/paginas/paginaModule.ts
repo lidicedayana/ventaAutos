@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { PagRegistroVehiculoComponent } from './pagRegistroVehiculo/pagRegistroVehiculo.component';
 import { PagEditarVehiculoComponent } from './pagEditarVehiculo/pagEditarVehiculo.component';
 import { PagRegistrarClienteComponent } from './pagRegistrarCliente/pagRegistrarCliente.component';
+import { PagListaClientesComponent } from './pagListaClientes/pagListaClientes.component';
+import { PadEditarClienteComponent } from './padEditarCliente/padEditarCliente.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { PagRegistrarClienteComponent } from './pagRegistrarCliente/pagRegistrar
         PagVehiculosComponent,
         PagRegistroVehiculoComponent,
         PagEditarVehiculoComponent,
-        PagRegistrarClienteComponent
+        PagRegistrarClienteComponent,
+        PagListaClientesComponent,
+        PadEditarClienteComponent
     ],
     imports: [
         CommonModule,
@@ -30,7 +34,9 @@ import { PagRegistrarClienteComponent } from './pagRegistrarCliente/pagRegistrar
         PagVehiculosComponent,
         PagRegistroVehiculoComponent,
         PagEditarVehiculoComponent,
-        PagRegistrarClienteComponent
+        PagRegistrarClienteComponent,
+        PagListaClientesComponent,
+        PadEditarClienteComponent
     ]
   })
   export class paginaModule { }

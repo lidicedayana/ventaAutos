@@ -1,4 +1,5 @@
 import { Cliente } from "../modelos/Cliente";
+
 export interface RespuestaCliente {
     codigo: string;
     mensaje: string;

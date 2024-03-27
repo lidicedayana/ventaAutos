@@ -1,9 +1,9 @@
 export interface Cliente{
-    codigo: string;
+    id: number;
     nombre?: string;
     apellido?: string;
     password?: string;
-    quiereContacto: boolean;
+    quiereContacto?: boolean | null;
     email?: string | null;
     telefono?: string | null;
 }

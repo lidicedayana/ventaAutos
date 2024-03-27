@@ -7,6 +7,8 @@ import { PagVehiculosComponent } from './paginas/pagVehiculos/pagVehiculos.compo
 import { PagRegistroVehiculoComponent } from './paginas/pagRegistroVehiculo/pagRegistroVehiculo.component';
 import { PagEditarVehiculoComponent } from './paginas/pagEditarVehiculo/pagEditarVehiculo.component';
 import { PagRegistrarClienteComponent } from './paginas/pagRegistrarCliente/pagRegistrarCliente.component';
+import { PagListaClientesComponent } from './paginas/pagListaClientes/pagListaClientes.component';
+import { PadEditarClienteComponent } from './paginas/padEditarCliente/padEditarCliente.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,16 @@ const routes: Routes = [
   {
     path: "clientes", 
     component: PagRegistrarClienteComponent,
+    
+  },
+  {
+    path: "ConsultaClientes", 
+    component: PagListaClientesComponent,
+    
+  },
+  {
+    path: "cliente/:id", 
+    component: PadEditarClienteComponent,
     
   },
   {

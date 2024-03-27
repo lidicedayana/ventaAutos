@@ -79,8 +79,31 @@ export class VehiculoService {
 
   ];
 
-  insertarCliente(cliente:Cliente): Observable<RespuestaCliente>{
+  insertarCliente(cliente:Cliente){
     return this.http.post<RespuestaCliente>(this.baseUrl+"cliente/", cliente, this.httpOptions)
   }
 
+  getClientes(filtro?:string, rows?:number, page?:number): Observable<RespuestaCliente>{
+    let body = new HttpParams();
+    body = filtro ? body.set('filtro', filtro) : body;
+    body = rows ? body.set('rows', rows) : body;
+    body = page ? body.set('page', page) : body;
+    // return this.http.get<Respuesta>(this.baseUrl+"vehiculos/", {params: body}).pipe(
+    //   map(respuesta => respuesta.data)
+    // )
+    return this.http.get<RespuestaCliente>(this.baseUrl+"clientes/", {params: body});
+  
+  }
+
+  eliminarCliente(id: number){
+    return this.http.delete<RespuestaCliente>(this.baseUrl+"cliente/"+id);
+  }
+
+  getCliente( id: number){
+    return this.http.get<RespuestaCliente>(this.baseUrl+"cliente/"+id)
+  }
+
+  actualizarCliente(cliente:Cliente, id: number){
+    return this.http.put<RespuestaCliente>(this.baseUrl+"cliente/"+id, cliente, this.httpOptions);
+  }
 }

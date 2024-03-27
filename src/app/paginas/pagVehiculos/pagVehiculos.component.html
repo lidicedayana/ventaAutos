@@ -47,16 +47,26 @@
         <div class="row">
           <label for="staticCodigo" class="col fw-bold">Calificacion: </label>
           <div class="col">
-            <app-calificacion [calificacion]="vehiculo?.calificacion" (accionClick)="imprimir($event)"></app-calificacion>
+            <app-calificacion [calificacion]="vehiculo?.calificacion"
+              (accionClick)="imprimir($event)"></app-calificacion>
           </div>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          
+
           <button type="button" class="btn btn-outline-primary"><i class="bi bi-cart-fill"></i> Comprar</button>
         </div>
       </div>
       <div class="col" id="img_vehi">
         <img class="vehiculo_car" src="{{vehiculo?.foto}}" alt="vehiculo">
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    <div class="row">
+      <div class="col">
+        <a class="btn btn-outline-info d-grid gap-2 col-6 mx-auto" style="width: 110px;"  [routerLink]="['/vehiculos/']">
+          Atras</a>
+
       </div>
     </div>
   </div>
